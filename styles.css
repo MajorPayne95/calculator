@@ -39,6 +39,9 @@ button {
     font-size: 45px;
     width: 75px;
     margin: 10px;
-    text-align: center;
-    
+    text-align: center;   
+}
+
+.equals {
+    width: 90%;
 }
