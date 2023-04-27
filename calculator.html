@@ -11,7 +11,10 @@
 <body>
     <h1 id="title">Calculator</h1>
     <div id="calc">
-        <div id="display">9</div>
+        <div id="display">
+            <div id="equation"></div>
+            <div id="input"></div>
+        </div>
         <div id="keypad">
             <div id="numbers">
                 <button class="number">7</button>
@@ -26,13 +29,13 @@
                 <button class="number">0</button>
             </div>
             <div>
-                <button class="clear">C</button>
-                <button class="allClear">AC</button>
+                <button id="clear">C</button>
+                <button id="allClear">AC</button>
                 <button class="operator">+</button>
                 <button class="operator">x</button>
                 <button class="operator">-</button>
                 <button class="operator">/</button>
-                <button class="equals">=</button>
+                <button id="equals">=</button>
             </div>
         </div>
     </div>

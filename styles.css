@@ -1,6 +1,9 @@
 body {
     background-color: rgb(213, 253, 248);
 }
+
+
+
 #title {
     align-self: center;
     font-family: cursive;
@@ -20,14 +23,24 @@ body {
 
 #display {
     display: flex;
-    font-size: 50px;
+    flex-direction: column;
+    font-size: 30px;
     background-color: rgb(255, 232, 202);
     border: solid gray 5px;
     margin: 15% auto;
     height: 80px;
     width: 70%;
     justify-content: center;
-    align-items: center;
+    align-items: end;
+}
+
+#equation, #input {
+    margin-right: 5%;
+    
+}
+
+#equation {
+    opacity: 30%;
 }
 
 #keypad {
