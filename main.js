@@ -17,34 +17,55 @@ number.forEach(button =>
 
 operator.forEach(operator => 
     operator.addEventListener('click', function() {
-        chosenOperator = operator.textContent;
-        equation.textContent += (tempNum + chosenOperator);
-        firstNum = tempNum;
-        input.textContent = '';
-        tempNum = '';
+        if (chosenOperator == undefined) {
+            chosenOperator = operator.textContent;
+            equation.textContent += (tempNum + chosenOperator);
+            firstNum = tempNum;
+            input.textContent = '';
+            tempNum = '';
+        } else {
+            chosenOperator = operator.textContent;
+            equation.textContent += chosenOperator;
+            input.textContent = '';
+            tempNum = '';
+        }
 }));
 
 equals.addEventListener('click', function() {
     equation.textContent += tempNum;
     secondNum = tempNum;
     if (chosenOperator == '+') {
-        input.textContent = add();
+        input.textContent = add(firstNum, secondNum);
+        firstNum = input.textContent;
+    };
+    if (chosenOperator == '-') {
+        input.textContent = subtract(firstNum, secondNum);
+        firstNum = input.textContent;
+    };
+    if (chosenOperator == 'x') {
+        input.textContent = multiply(firstNum, secondNum);
+        firstNum = input.textContent;
+    };
+    if (chosenOperator == '/') {
+        input.textContent = divide(firstNum, secondNum);
+        firstNum = input.textContent;
     };
 })
 
 function add(firstNum, secondNum) {
-    console.log(firstNum + secondNum);
-    return firstNum + secondNum
+    //console.log(firstNum);
+
+    return Number(firstNum) + Number(secondNum);
 }
 
 function subtract(firstNum, secondNum) {
-    return firstNum - secondNum
+    return Number(firstNum) - Number(secondNum);
 }
 
 function multiply(firstNum, secondNum) {
-    return firstNum * secondNum
+    return Number(firstNum) * Number(secondNum);
 }
 
 function divide(firstNum, secondNum) {
-    return firstNum / secondNum
+    return Number(firstNum) / Number(secondNum);
 }
