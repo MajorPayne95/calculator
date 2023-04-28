@@ -1,10 +1,12 @@
 const number = [...document.getElementsByClassName('number')];
 const operator = [...document.getElementsByClassName('operator')];
 const input = document.getElementById('input');
-const equation = document.getElementById('equation');
+const seelectedOp = document.getElementById('selectedOp');
+const num1 = document.getElementById('num1');
+const num2 = document.getElementById('num2');
 const equals = document.getElementById('equals');
 
-let tempNum;
+let tempNum = 0;
 let firstNum;
 let secondNum;
 let chosenOperator;
@@ -17,23 +19,34 @@ number.forEach(button =>
 
 operator.forEach(operator => 
     operator.addEventListener('click', function() {
-        if (chosenOperator == undefined) {
+        if (firstNum === undefined) {
             chosenOperator = operator.textContent;
-            equation.textContent += (tempNum + chosenOperator);
+            seelectedOp.textContent += chosenOperator;
             firstNum = tempNum;
+            num1.textContent = firstNum;
+            input.textContent = '';
+            tempNum = '';
+        } else if (secondNum === undefined) {
+            chosenOperator = operator.textContent;
+            seelectedOp.textContent = chosenOperator;
             input.textContent = '';
             tempNum = '';
         } else {
+            num2.textContent = '';
+            seelectedOp.textContent = '';
+            num1.textContent = input.textContent;
             chosenOperator = operator.textContent;
-            equation.textContent += chosenOperator;
+            seelectedOp.textContent = chosenOperator;
             input.textContent = '';
             tempNum = '';
         }
 }));
 
 equals.addEventListener('click', function() {
-    equation.textContent += tempNum;
+    //seelectedOp.textContent += tempNum;
     secondNum = tempNum;
+    num2.textContent = secondNum;
+
     if (chosenOperator == '+') {
         input.textContent = add(firstNum, secondNum);
         firstNum = input.textContent;
