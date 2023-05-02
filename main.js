@@ -53,6 +53,7 @@ operator.forEach(operator =>
 }));
 
 equals.addEventListener('click', function() {
+    if (secondNum === undefined) {return input.textContent = firstNum};
     if (chosenOperator == '+') {
         input.textContent = add(firstNum, secondNum);
         firstNum = input.textContent;
