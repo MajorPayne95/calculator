@@ -2,8 +2,6 @@ body {
     background-color: rgb(213, 253, 248);
 }
 
-
-
 #title {
     align-self: center;
     font-family: cursive;
@@ -35,8 +33,7 @@ body {
 }
 
 #equation, #input {
-    margin-right: 5%;
-    
+    margin-right: 5%;   
 }
 
 #equation {
@@ -56,6 +53,22 @@ button {
     text-align: center;   
 }
 
-.equals {
-    width: 90%;
+#equals, #allClear {
+    width: 86%;
 }
+
+#zero {
+    width: 91%;
+}
+
+#operations {
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    
+}
+
+#numbers {
+    width: 60%;
+}
+
